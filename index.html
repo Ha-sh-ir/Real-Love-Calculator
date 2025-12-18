@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real Love Calculator ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      width: 320px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .card img {
+      width: 90px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: #ff2e63;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+    }
+
+    button {
+      width: 95%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #ff2e63;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e02655;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      display: none;
+    }
+
+    .loading {
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="heart">
+
+    <h1>REAL LOVE CALCULATOR</h1>
+    <h2>Check your true love percentage 💕</h2>
+
+    <input placeholder="Your Name">
+    <input placeholder="Crush Name">
+
+    <button onclick="calculate()">Calculate Love ❤️</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculate() {
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.className = "loading";
+      result.innerHTML = "Calculating your love... 💖";
+
+      setTimeout(() => {
+        result.className = "";
+        result.innerHTML = `
+          💔 Love Match: 0% <br><br>
+          😂 You’ve been pranked by <b>someone</b>
+        `;
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
